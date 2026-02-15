@@ -47,11 +47,11 @@ if uploaded_file:
     st.subheader("Uploaded Data Preview")
     st.dataframe(test_df.head())
 
-    if "y" in test_df.columns:
-        X_test = test_df.drop("y", axis=1)
-        y_test = test_df["y"].map({"yes": 1, "no": 0})
+    if "deposit" in test_df.columns:
+        X_test = test_df.drop("deposit", axis=1)
+        y_test = test_df["deposit"].map({"yes": 1, "no": 0})
     else:
-        st.error("Uploaded CSV must contain 'y' column for evaluation.")
+        st.error("Uploaded CSV must contain 'deposit' column for evaluation.")
         st.stop()
 
     # Predictions
